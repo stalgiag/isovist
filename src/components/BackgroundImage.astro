@@ -1,5 +1,6 @@
 ---
 import backgroundImage from "../assets/livingroom.png";
+import tableImage from "../assets/table.png";
 import { Image } from "astro:assets";
 ---
 
@@ -10,9 +11,11 @@ import { Image } from "astro:assets";
     src={backgroundImage}
     alt="background"
     class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[70vh] w-auto object-cover"
-    Added
-    centering
-    transforms
+  />
+  <Image
+    src={tableImage}
+    alt="table"
+    class="absolute top-[64%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-[13vh] w-auto object-cover"
   />
   <div
     class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"
