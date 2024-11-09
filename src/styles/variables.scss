@@ -1,0 +1,11 @@
+:root {
+  --background: #13151a;
+  --foreground: white;
+  --foreground-secondary: #f99806;
+  --foreground-gradient: linear-gradient(
+    45deg,
+    rgb(var(--foreground)),
+    rgb(var(--foreground-secondary)) 30%,
+    white 60%
+  );
+}

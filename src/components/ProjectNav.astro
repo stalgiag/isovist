@@ -1,0 +1,25 @@
+---
+import ProjectThumb from "./ProjectThumb.astro";
+
+const { projects } = Astro.props;
+---
+
+<div class="h-full grid grid-cols-4 pointer-events-auto place-items-center">
+  {
+    projects.map((project: any, index: number) => (
+      <ProjectThumb {...project.data} index={index} />
+    ))
+  }
+</div>
+
+<script>
+  // Get all buttons
+  const buttons = document.querySelectorAll("button");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const index = parseInt(button.dataset.index as string);
+      window.changeProject(index);
+    });
+  });
+</script>

@@ -1,0 +1,22 @@
+---
+import backgroundImage from "../assets/livingroom.png";
+import { Image } from "astro:assets";
+---
+
+<div
+  class="fixed inset-0 h-screen w-full z-[-10] flex flex-col items-center justify-center"
+>
+  <Image
+    src={backgroundImage}
+    alt="background"
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[70vh] w-auto object-cover"
+    Added
+    centering
+    transforms
+  />
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"
+    style="--tw-gradient-stops: var(--tw-gradient-from) 0%, transparent 30%, transparent 70%, var(--tw-gradient-to) 100%"
+  >
+  </div>
+</div>

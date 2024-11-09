@@ -1,0 +1,22 @@
+@use "./variables.scss";
+
+html {
+  font-family: system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+code {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}

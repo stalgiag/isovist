@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+
+const { title, index, thumbnail } = Astro.props;
+---
+
+<button
+  class="my-2 w-full flex justify-center border-r-[0.5px] border-opacity-50 border-foreground"
+  data-index={index}
+>
+  <Image
+    class="w-auto h-[60px] hover:scale-110 transition-all ease-in-out duration-500"
+    src={thumbnail}
+    alt={title}
+  />
+</button>
