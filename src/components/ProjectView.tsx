@@ -16,14 +16,14 @@ export default function ProjectView({ projects }) {
   return (
     <>
       <ProjectInfo project={projects[currentIndex]} />
-      <div class="w-full h-[200px] flex justify-center items-center self-center relative grid-in-main md:grid-in-main-center">
+      <div class="w-full h-[200px] lg:h-[400px] flex justify-center items-center self-center relative grid-in-main md:grid-in-main-center">
         <img
           class="w-auto h-full object-contain relative z-10 mix-blend-screen"
           src={projects[currentIndex].data.featuredImage.src}
           alt={projects[currentIndex].data.featuredImageAlt}
         />
         <img
-          class="w-auto h-[300px] object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="w-auto h-[300px] lg:h-[500px] object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           src={bracketImage.src}
           alt="bracket"
         />

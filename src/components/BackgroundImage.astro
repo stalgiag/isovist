@@ -5,21 +5,21 @@ import { Image } from "astro:assets";
 ---
 
 <div
-  class="fixed inset-0 h-screen md:h-[70vh] w-full z-[-10] flex flex-col items-center justify-center md:justify-start"
+  class="fixed inset-0 h-screen md:h-[70vh] lg:h-screen w-full z-[-10] flex flex-col items-center justify-center md:justify-start"
 >
   <Image
     src={backgroundImage}
     alt="background"
     loading="eager"
-    class="absolute top-1/2 md:top-0 left-1/2 -translate-x-1/2 md:translate-y-0 -translate-y-1/2 h-[70vh] md:h-[50vh] w-auto object-cover"
+    class="absolute top-1/2 md:top-0 left-1/2 -translate-x-1/2 md:translate-y-0 -translate-y-1/2 h-[70vh] md:h-[50vh] lg:h-auto md:min-w-[1920px] object-cover"
   />
   <Image
     src={tableImage}
     alt="table"
-    class="absolute top-[430px] md:top-[375px] left-1/2 -translate-x-1/2 -translate-y-1/2 h-[13vh] md:h-[100px] w-auto object-cover"
+    class="absolute top-[65%] md:top-[55%] lg:top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] md:h-[100px] lg:h-[150px] h-auto object-cover"
   />
   <div
-    class="absolute md:h-[50vh] inset-0 bg-gradient-to-b from-black via-transparent to-black gradient-stops"
+    class="absolute md:h-[50vh] lg:h-screen inset-0 bg-gradient-to-b from-black via-transparent to-black gradient-stops"
   >
   </div>
 </div>
