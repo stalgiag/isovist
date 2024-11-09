@@ -1,8 +1,8 @@
-import { Image } from "astro:assets";
 import { useState, useEffect } from "preact/hooks";
 import bracketImage from "../assets/brackets.png";
+import ProjectInfo from "./ProjectInfo";
 
-export default function ProjectView({ projects }) {
+export default function ProjectView({ projects, logo }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -15,11 +15,9 @@ export default function ProjectView({ projects }) {
 
   return (
     <>
-      <div class="w-full  ">
-        <h2 class="text-foreground-secondary">
-          {projects[currentIndex].data.title}
-        </h2>
-        <p class="text-foreground-secondary">{projects[currentIndex].body}</p>
+      <div class="w-full grid grid-cols-2 gap-2">
+        {logo}
+        <ProjectInfo project={projects[currentIndex]} />
       </div>
       <div class="w-full h-[200px] flex justify-center items-center self-center relative">
         <img

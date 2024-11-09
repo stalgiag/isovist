@@ -1,4 +1,5 @@
 @use "./variables.scss";
+@use "./fonts.scss";
 
 html {
   font-family: system-ui, sans-serif;
@@ -7,6 +8,7 @@ html {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  font-family: "Din", sans-serif;
 }
 
 code {
