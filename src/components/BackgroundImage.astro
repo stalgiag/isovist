@@ -5,22 +5,34 @@ import { Image } from "astro:assets";
 ---
 
 <div
-  class="fixed inset-0 h-screen w-full z-[-10] flex flex-col items-center justify-center"
+  class="fixed inset-0 h-screen md:h-[70vh] w-full z-[-10] flex flex-col items-center justify-center md:justify-start"
 >
   <Image
     src={backgroundImage}
     alt="background"
     loading="eager"
-    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[70vh] w-auto object-cover"
+    class="absolute top-1/2 md:top-0 left-1/2 -translate-x-1/2 md:translate-y-0 -translate-y-1/2 h-[70vh] md:h-[50vh] w-auto object-cover"
   />
   <Image
     src={tableImage}
     alt="table"
-    class="absolute top-[64%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-[13vh] w-auto object-cover"
+    class="absolute top-[430px] md:top-[375px] left-1/2 -translate-x-1/2 -translate-y-1/2 h-[13vh] md:h-[100px] w-auto object-cover"
   />
   <div
-    class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"
-    style="--tw-gradient-stops: var(--tw-gradient-from) 0%, transparent 30%, transparent 70%, var(--tw-gradient-to) 100%"
+    class="absolute md:h-[50vh] inset-0 bg-gradient-to-b from-black via-transparent to-black gradient-stops"
   >
   </div>
 </div>
+<style>
+  .gradient-stops {
+    --tw-gradient-stops: var(--tw-gradient-from) 0%, transparent 30%,
+      transparent 70%, var(--tw-gradient-to) 100%;
+  }
+
+  @media (min-width: 768px) {
+    .gradient-stops {
+      --tw-gradient-stops: var(--tw-gradient-from) 0%, transparent 20%,
+        transparent 80%, var(--tw-gradient-to) 100%;
+    }
+  }
+</style>

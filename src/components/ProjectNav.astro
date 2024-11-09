@@ -4,7 +4,9 @@ import ProjectThumb from "./ProjectThumb.astro";
 const { projects } = Astro.props;
 ---
 
-<div class="h-full grid grid-cols-4 pointer-events-auto place-items-center">
+<div
+  class="h-full grid grid-cols-4 md:grid-cols-8 pointer-events-auto place-items-center grid-in-nav"
+>
   {
     projects.map((project: any, index: number) => (
       <ProjectThumb {...project.data} index={index} />

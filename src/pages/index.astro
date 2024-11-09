@@ -11,11 +11,14 @@ const projects = await getCollection("projects");
 
 <Layout title="Isovist">
   <main
-    class="p-4 h-screen w-screen grid grid-cols-1 gap-4 grid-rows-[1fr_6fr_1fr_20px] z-10"
+    class="p-4 h-screen md:h-[60vh] w-screen grid
+					gap-4 grid-rows-[1fr_6fr_1fr_20px] z-10
+					grid-areas-mobile-layout
+					md:grid-areas-desktop-layout
+					md:grid-cols-[2fr_3fr_2fr]"
   >
-    <ProjectView projects={projects} client:load>
-      <Logo slot="logo" />
-    </ProjectView>
+    <Logo slot="logo" />
+    <ProjectView projects={projects} client:load />
     <ProjectNav projects={projects} />
     <Footer />
   </main>

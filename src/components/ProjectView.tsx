@@ -2,7 +2,7 @@ import { useState, useEffect } from "preact/hooks";
 import bracketImage from "../assets/brackets.png";
 import ProjectInfo from "./ProjectInfo";
 
-export default function ProjectView({ projects, logo }) {
+export default function ProjectView({ projects }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -15,11 +15,8 @@ export default function ProjectView({ projects, logo }) {
 
   return (
     <>
-      <div class="w-full grid grid-cols-2 gap-2">
-        {logo}
-        <ProjectInfo project={projects[currentIndex]} />
-      </div>
-      <div class="w-full h-[200px] flex justify-center items-center self-center relative">
+      <ProjectInfo project={projects[currentIndex]} />
+      <div class="w-full h-[200px] flex justify-center items-center self-center relative grid-in-main md:grid-in-main-center">
         <img
           class="w-auto h-full object-contain relative z-10 mix-blend-screen"
           src={projects[currentIndex].data.featuredImage.src}
