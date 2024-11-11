@@ -15,6 +15,7 @@ export default function ProjectView({ projects }) {
 
   return (
     <>
+      {/* @ts-ignore */}
       <ProjectInfo project={projects[currentIndex]} />
       <div class="w-full h-[200px] lg:h-[400px] flex justify-center items-center self-center relative grid-in-main md:grid-in-main-center">
         <img

@@ -1,5 +1,6 @@
 type Props = {};
 
+// @ts-ignore
 const ProjectInfo = ({ project }: Props) => {
   return (
     <div class="uppercase self-center md:grid-in-main-right">
