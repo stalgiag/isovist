@@ -9,5 +9,5 @@ import preact from "@astrojs/preact";
 export default defineConfig({
   integrations: [tailwind(), preact()],
   site: "https://stalgiag.github.io",
-  base: "isovist",
+  base: "/isovist",
 });
