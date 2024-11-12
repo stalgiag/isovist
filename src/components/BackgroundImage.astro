@@ -1,5 +1,5 @@
 ---
-import backgroundImage from "../assets/livingroom.png";
+import backgroundImage from "../assets/livingroom_2.jpeg";
 import tableImage from "../assets/table.png";
 import { Image } from "astro:assets";
 ---
@@ -11,13 +11,14 @@ import { Image } from "astro:assets";
     src={backgroundImage}
     alt="background"
     loading="eager"
+    quality={100}
     class="absolute top-1/2 md:top-0 left-1/2 -translate-x-1/2 md:translate-y-0 -translate-y-1/2 h-[70vh] md:h-[50vh] lg:h-auto md:min-w-[1920px] object-cover"
   />
-  <Image
+  <!-- <Image
     src={tableImage}
     alt="table"
     class="absolute top-[65%] md:top-[55%] lg:top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] md:h-[100px] lg:h-[150px] h-auto object-cover"
-  />
+  /> -->
   <div
     class="absolute md:h-[50vh] lg:h-screen inset-0 bg-gradient-to-b from-black via-transparent to-black gradient-stops"
   >
