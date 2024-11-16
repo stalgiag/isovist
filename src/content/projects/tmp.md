@@ -4,7 +4,7 @@ order: 6
 tags: ["astro", "tailwind", "game"]
 thumbnail: ./images/tmp_v1_thumb.png
 thumbnailAlt: TMP game thumbnail
-video: ./isovist/videos/tmp_v1_smooth_pingpong.mp4
+video: ./videos/tmp_v1_smooth_pingpong.mp4
 ---
 
 THE CONTEXT OF THE PHONE APPLICATION OF 3DSC LOOKS AHEAD TO WHAT XR INTERACTIVE EXPERIENCES WILL BE.

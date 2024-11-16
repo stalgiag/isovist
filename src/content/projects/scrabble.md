@@ -6,7 +6,7 @@ featuredImage: ./images/scrabble.png
 featuredImageAlt: Scrabble game
 thumbnail: ./images/3dsc_v2_thumb.png
 thumbnailAlt: Scrabble game thumbnail
-video: ./isovist/videos/3dsc_v2_smooth_pingpong.mp4
+video: ./videos/3dsc_v2_smooth_pingpong.mp4
 ---
 
 THE CONTEXT OF THE PHONE APPLICATION OF 3DSC LOOKS AHEAD TO WHAT XR INTERACTIVE EXPERIENCES WILL BE.

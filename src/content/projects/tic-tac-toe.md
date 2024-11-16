@@ -4,7 +4,7 @@ order: 1
 tags: ["astro", "tailwind", "game"]
 thumbnail: ./images/3dTT_v1_thumb.png
 thumbnailAlt: Tic Tac Toe game thumbnail
-video: ./isovist/videos/3dtt_v1_smooth_pingpong.mp4
+video: ./videos/3dtt_v1_smooth_pingpong.mp4
 ---
 
 THE CONTEXT OF THE PHONE APPLICATION OF 3DSC LOOKS AHEAD TO WHAT XR INTERACTIVE EXPERIENCES WILL BE.
