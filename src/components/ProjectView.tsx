@@ -49,7 +49,7 @@ export default function ProjectView({ projects }) {
             marginTop: `${projects[currentIndex]?.data?.offset?.[1] ?? 0}px`,
             marginLeft: `${projects[currentIndex]?.data?.offset?.[0] ?? 0}px`,
           }}
-          src={projects[currentIndex].data.video}
+          src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.video.replace("./", "/")}`}
           ref={(el) => {
             if (el) el.playbackRate = 0.9;
           }}
