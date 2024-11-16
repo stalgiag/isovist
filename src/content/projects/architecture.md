@@ -1,10 +1,11 @@
 ---
 title: Architecture
 tags: ["astro", "tailwind", "game"]
-featuredImage: ./images/scrabble.png
-featuredImageAlt: Tic Tac Toe game
-thumbnail: ./images/model-icon.png
-thumbnailAlt: Tic Tac Toe game thumbnail
+thumbnail: ./images/arch_v1_thumb.png
+thumbnailAlt: Architecture thumbnail
+scale: 0.7
+offset: [0, -40]
+video: ./isovist/videos/arch_v1_smooth_pingpong.mp4
 ---
 
 THE CONTEXT OF THE PHONE APPLICATION OF 3DSC LOOKS AHEAD TO WHAT XR INTERACTIVE EXPERIENCES WILL BE.

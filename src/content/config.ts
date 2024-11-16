@@ -4,13 +4,12 @@ const projectCollection = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
     title: z.string(),
-    featuredImage: image().refine((img) => img.width >= 3, {
-      message: "Featured image must be at least 3 pixels wide!",
-    }),
-    featuredImageAlt: z.string(),
+    video: z.string(),
     tags: z.array(z.string()),
-    thumbnail: image().refine((img) => img.width >= 3, {
-      message: "Thumbnail must be at least 3 pixels wide!",
+    scale: z.number().optional(),
+    offset: z.array(z.number()).optional(),
+    thumbnail: image().refine((img) => img.width >= 300, {
+      message: "Thumbnail must be at least 300 pixels wide!",
     }),
     thumbnailAlt: z.string(),
   }),
