@@ -1,10 +1,11 @@
 ---
 title: Architecture
+order: 4
 tags: ["astro", "tailwind", "game"]
 thumbnail: ./images/arch_v1_thumb.png
 thumbnailAlt: Architecture thumbnail
 scale: 0.7
-offset: [0, -40]
+offset: [-20, -40]
 video: ./isovist/videos/arch_v1_smooth_pingpong.mp4
 ---
 

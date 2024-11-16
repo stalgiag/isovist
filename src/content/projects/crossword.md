@@ -1,5 +1,6 @@
 ---
 title: Crossword
+order: 3
 tags: ["astro", "tailwind", "game"]
 thumbnail: ./images/3dCW_v1_thumb.png
 thumbnailAlt: "Crossword Thumbnail"

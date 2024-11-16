@@ -1,5 +1,6 @@
 ---
 title: TMP
+order: 6
 tags: ["astro", "tailwind", "game"]
 thumbnail: ./images/tmp_v1_thumb.png
 thumbnailAlt: TMP game thumbnail

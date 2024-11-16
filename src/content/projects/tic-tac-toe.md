@@ -1,5 +1,6 @@
 ---
 title: Tic Tac Toe
+order: 1
 tags: ["astro", "tailwind", "game"]
 thumbnail: ./images/3dTT_v1_thumb.png
 thumbnailAlt: Tic Tac Toe game thumbnail

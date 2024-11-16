@@ -7,6 +7,7 @@ import { getCollection } from "astro:content";
 import Logo from "../components/Logo.astro";
 
 const projects = await getCollection("projects");
+projects.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Isovist">

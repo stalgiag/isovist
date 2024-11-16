@@ -1,5 +1,6 @@
 ---
 title: Lovelace
+order: 5
 tags: ["astro", "tailwind", "game"]
 thumbnail: ./images/loveLace_v1_thumb.png
 thumbnailAlt: Lovelace thumbnail

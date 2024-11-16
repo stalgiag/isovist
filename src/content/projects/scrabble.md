@@ -1,5 +1,6 @@
 ---
 title: Scrabble
+order: 2
 tags: ["astro", "tailwind", "game"]
 featuredImage: ./images/scrabble.png
 featuredImageAlt: Scrabble game
