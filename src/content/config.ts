@@ -1,11 +1,19 @@
 import { z, defineCollection } from 'astro:content';
 
+export const SPOTLIGHTS = {
+  INVERSE: 'inverse',
+  NORMAL: 'normal',
+}
+
 const projectCollection = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
     order: z.number(),
     title: z.string(),
-    video: z.string(),
+    video: z.string().optional(),
+    videos: z.array(z.string()).optional(),
+    image: image().optional(),
+    spotlight: z.enum([SPOTLIGHTS.INVERSE, SPOTLIGHTS.NORMAL]).optional(),
     tags: z.array(z.string()),
     scale: z.number().optional(),
     offset: z.array(z.number()).optional(),

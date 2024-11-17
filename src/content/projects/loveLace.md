@@ -5,6 +5,7 @@ tags: ["astro", "tailwind", "game"]
 thumbnail: ./images/loveLace_v1_thumb.png
 thumbnailAlt: Lovelace thumbnail
 video: ./videos/lovelace_v1_smooth_pingpong.mp4
+spotlight: 'inverse'
 ---
 
 THE CONTEXT OF THE PHONE APPLICATION OF 3DSC LOOKS AHEAD TO WHAT XR INTERACTIVE EXPERIENCES WILL BE.

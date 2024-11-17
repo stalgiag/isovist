@@ -2,7 +2,7 @@
 title: Tic Tac Toe
 order: 1
 tags: ["astro", "tailwind", "game"]
-thumbnail: ./images/3dTT_v1_thumb.png
+thumbnail: ./images/3dtt_v2_thumb.png
 thumbnailAlt: Tic Tac Toe game thumbnail
 video: ./videos/3dtt_v1_smooth_pingpong.mp4
 ---

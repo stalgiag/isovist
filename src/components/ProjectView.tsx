@@ -1,6 +1,8 @@
 import { useState, useEffect } from "preact/hooks";
 import bracketImage from "../assets/brackets.png";
 import ProjectInfo from "./ProjectInfo";
+import { SPOTLIGHTS } from "../content/config";
+import { Image } from "astro:assets";
 
 export default function ProjectView({ projects }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,19 +31,21 @@ export default function ProjectView({ projects }) {
     return null; // Or return a loading spinner/placeholder
   }
 
-  const scale = projects[currentIndex].data.scale || 1;
-  const h = 600 * scale;
+  const renderFeaturedMedia = () => {
+    if (projects[currentIndex].data.image) {
+      return (
+        <img
+          class="w-auto h-[300px] lg:h-[350px] mt-2 object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          src={projects[currentIndex]?.data?.image.src}
+          alt={projects[currentIndex]?.data?.thumbnailAlt}
+          width={projects[currentIndex]?.data?.image.width}
+          height={projects[currentIndex]?.data?.image.height}
+        />
+      );
+    }
 
-  return (
-    <>
-      {/* @ts-ignore */}
-      <ProjectInfo project={projects[currentIndex]} />
-      <div
-        style={{
-          height: isLargeScreen ? `600px` : `300px`,
-        }}
-        class={`w-full flex justify-center items-center self-center relative grid-in-main md:grid-in-main-center`}
-      >
+    if (projects[currentIndex].data.video) {
+      return (
         <video
           class="w-auto h-full max-h-full object-contain relative z-10 mix-blend-screen"
           style={{
@@ -58,11 +62,83 @@ export default function ProjectView({ projects }) {
           loop
           playsinline
         />
+      );
+    }
+
+    if (projects[currentIndex].data.videos) {
+      return (
+        <video
+          class="w-auto h-full max-h-full object-contain relative z-10 mix-blend-screen"
+          style={{
+            height: isLargeScreen ? `${h}px` : `${h / 2}px`,
+            marginTop: `${projects[currentIndex]?.data?.offset?.[1] ?? 0}px`,
+            marginLeft: `${projects[currentIndex]?.data?.offset?.[0] ?? 0}px`,
+          }}
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          <source
+            src={projects[currentIndex].data.videos[1]}
+            type="video/quicktime"
+          />
+          <source
+            src={projects[currentIndex].data.videos[0]}
+            type="video/webm"
+          />
+        </video>
+      );
+    }
+  };
+
+  const scale = projects[currentIndex].data.scale || 1;
+  const h = 600 * scale;
+
+  return (
+    <>
+      {/* @ts-ignore */}
+      <ProjectInfo project={projects[currentIndex]} />
+      <div
+        style={{
+          height: isLargeScreen ? `600px` : `300px`,
+        }}
+        class={`w-full flex justify-center items-center self-center relative grid-in-main md:grid-in-main-center`}
+      >
+        {renderFeaturedMedia()}
         <img
           class="w-auto h-[300px] lg:h-[500px] object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           src={bracketImage.src}
           alt="bracket"
         />
+        {projects[currentIndex].data.spotlight === SPOTLIGHTS.INVERSE && (
+          <div
+            class="absolute inset-0 bg-black opacity-40 backdrop-blur-md -z-10"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 80% at center, black 60%, transparent 100%)",
+              width: "100%",
+              height: "100%",
+              left: "0",
+              top: "0",
+              filter: "blur(40px)",
+            }}
+          />
+        )}
+        {projects[currentIndex]?.data?.spotlight === SPOTLIGHTS.NORMAL && (
+          <div
+            class="absolute inset-0 bg-white opacity-60 backdrop-blur-md -z-10"
+            style={{
+              background:
+                "radial-gradient(ellipse 48% 30% at center, white 60%, transparent 100%)",
+              width: "100%",
+              height: "100%",
+              left: "0",
+              top: "0",
+              filter: "blur(40px)",
+            }}
+          />
+        )}
       </div>
     </>
   );

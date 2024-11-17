@@ -51,7 +51,16 @@ ffmpeg -framerate 60 -i "duplicated_${PREFIX}/frame_%05d.png" -filter_complex "\
 [v_scaled]split[v3][v4];\
 [v3]geq=r='0':g='0':b='0':a='1',format=yuva420p[bg];\
 [bg][v4]overlay=format=auto[out]" \
--map "[out]" -c:v libx264 -preset veryslow -crf 17 -pix_fmt yuv420p -movflags +faststart "${PREFIX}_smooth_pingpong.mp4"
+-map "[out]" \
+-c:v libx264 \
+-preset slower \
+-crf 23 \
+-tune animation \
+-profile:v high \
+-level:v 4.1 \
+-movflags +faststart \
+-pix_fmt yuv420p \
+"${PREFIX}_smooth_pingpong.mp4"
 
 # Clean up the temporary directory
 rm -r "duplicated_${PREFIX}"
