@@ -14,7 +14,7 @@ const projectCollection = defineCollection({
     videos: z.array(z.string()).optional(),
     image: image().optional(),
     spotlight: z.enum([SPOTLIGHTS.INVERSE, SPOTLIGHTS.NORMAL]).optional(),
-    tags: z.array(z.string()),
+    tags: z.array(z.string()).optional(),
     scale: z.number().optional(),
     offset: z.array(z.number()).optional(),
     thumbnail: image().refine((img) => img.width >= 300, {

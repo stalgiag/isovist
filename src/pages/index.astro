@@ -15,10 +15,8 @@ projects.sort((a, b) => a.data.order - b.data.order);
     class="p-4 h-screen md:h-[60vh] lg:h-[100vh] w-screen grid
 					gap-4 grid-rows-[1fr_6fr_1fr_20px] z-10
 					grid-areas-mobile-layout
-					md:grid-areas-desktop-layout
-					md:grid-cols-[2fr_3fr_2fr]
-					lg:grid-rows-[0fr_4fr_1fr_20px]
-					lg:grid-cols-[1fr_2fr_1fr]"
+					lg:grid-areas-desktop-layout
+					lg:grid-cols-desktop-layout"
   >
     <Logo slot="logo" />
     <ProjectView projects={projects} client:load />

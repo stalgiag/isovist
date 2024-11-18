@@ -106,7 +106,7 @@ export default function ProjectView({ projects }) {
         style={{
           height: isLargeScreen ? `600px` : `300px`,
         }}
-        class={`w-full flex justify-center items-center self-center relative grid-in-main md:grid-in-main-center`}
+        class={`w-auto flex justify-center items-center self-center relative grid-in-main md:grid-in-main-center`}
       >
         {renderFeaturedMedia()}
         <img

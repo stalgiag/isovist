@@ -1,7 +1,23 @@
 @font-face {
   font-family: "Din";
-  src: url("/isovist/fonts/din.woff2") format("woff2");
+  src: url("/isovist/fonts/din-reg.woff2") format("woff2");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Din Medium";
+  src: url("/isovist/fonts/din-med.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/isovist/fonts/helveticaneue.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

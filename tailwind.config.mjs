@@ -3,6 +3,11 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        din: ["Din", "Helvetica Neue", "sans-serif"],
+        "din-medium": ["Din Medium", "Helvetica Neue", "sans-serif"],
+        "helvetica-neue": ["Helvetica Neue", "sans-serif"],
+      },
       gridTemplateAreas: {
         "mobile-layout": [
           "top-left top-right",
@@ -19,7 +24,7 @@ export default {
       },
       gridTemplateColumns: {
         "mobile-layout": "1fr 1fr",
-        "desktop-layout": "1fr 1fr 1fr",
+        "desktop-layout": "30% 40% 30%",
       },
       colors: {
         background: "#13151a",
