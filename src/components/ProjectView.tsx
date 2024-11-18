@@ -70,17 +70,20 @@ export default function ProjectView({ projects }) {
     if (projects[currentIndex].data.videos) {
       return (
         <video
-          class="w-auto h-full max-h-full object-contain relative z-10 mix-blend-screen"
+          class="w-auto h-full max-h-full relative z-10 mix-blend-screen"
           style={{
             height: isLargeScreen ? `${h}px` : `${h / 2}px`,
             marginTop: `${projects[currentIndex]?.data?.offset?.[1] ?? 0}px`,
             marginLeft: `${projects[currentIndex]?.data?.offset?.[0] ?? 0}px`,
+            width: "125%", // Make the video 20% wider
+            scale: "1.8",
+            transformOrigin: "center center",
           }}
           autoplay
           loop
           muted
           playsinline
-          key={currentIndex} // Add this line
+          key={currentIndex}
         >
           <source
             src={projects[currentIndex].data.videos[0]}
