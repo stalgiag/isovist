@@ -4,8 +4,8 @@ order: 6
 thumbnail: ./images/dq_v2_thumb.png
 thumbnailAlt: DQ game thumbnail
 videos: [
-  "./isovist/videos/dq_v1_smooth_pingpong_alpha-hevc-safari.mp4",
-  "./isovist/videos/dq_v1_smooth_pingpong_alpha-vp9-chrome.webm",
+  "./videos/dq_v1_smooth_pingpong_alpha-hevc-safari.mp4",
+  "./videos/dq_v1_smooth_pingpong_alpha-vp9-chrome.webm",
 ]
 ---
 
