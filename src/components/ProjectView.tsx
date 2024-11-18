@@ -65,6 +65,8 @@ export default function ProjectView({ projects }) {
       );
     }
 
+    // ... existing code ...
+
     if (projects[currentIndex].data.videos) {
       return (
         <video
@@ -78,14 +80,15 @@ export default function ProjectView({ projects }) {
           loop
           muted
           playsinline
+          key={currentIndex} // Add this line
         >
-          <source
-            src={projects[currentIndex].data.videos[1]}
-            type="video/quicktime"
-          />
           <source
             src={projects[currentIndex].data.videos[0]}
             type="video/webm"
+          />
+          <source
+            src={projects[currentIndex].data.videos[1]}
+            type="video/quicktime"
           />
         </video>
       );
