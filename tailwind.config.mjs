@@ -23,8 +23,13 @@ export default {
         ],
       },
       gridTemplateColumns: {
-        "mobile-layout": "1fr 1fr",
+        "mobile-layout": "50% 50%",
         "desktop-layout": "30% 40% 30%",
+      },
+      gridTemplateRows: {
+        "mobile-layout": "25% 40% 25% 5%",
+        "desktop-layout":
+          "minmax(150px, 25vh) minmax(400px, 45vh) minmax(200px, 25vh) minmax(25px, 5vh)",
       },
       colors: {
         background: "#13151a",

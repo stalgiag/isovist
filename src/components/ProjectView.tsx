@@ -14,28 +14,49 @@ export default function ProjectView({ projects }) {
     return () => window.removeEventListener("projectChanged", handleChange);
   }, []);
 
-  const [isLargeScreen, setIsLargeScreen] = useState(null);
+  const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "desktop">(
+    null,
+  );
 
   useEffect(() => {
-    // Set initial value
-    setIsLargeScreen(window.innerWidth >= 1024);
+    const getScreenSize = () => {
+      const width = window.innerWidth;
+      if (width <= 768) return "mobile";
+      if (width <= 1024) return "tablet";
+      return "desktop";
+    };
 
-    // Optional: Add resize listener if you want it to be responsive
+    // Set initial value
+    setScreenSize(getScreenSize());
+
+    // Add resize listener
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024);
+      setScreenSize(getScreenSize());
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  if (isLargeScreen === null) {
-    return null; // Or return a loading spinner/placeholder
+
+  if (screenSize === null) {
+    return null;
   }
+
+  const getHeightForScreen = () => {
+    switch (screenSize) {
+      case "mobile":
+        return h / 2;
+      case "tablet":
+        return h * 0.75;
+      case "desktop":
+        return h;
+    }
+  };
 
   const renderFeaturedMedia = () => {
     if (projects[currentIndex].data.image) {
       return (
         <img
-          class="w-auto h-[300px] lg:h-[350px] mt-2 object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="w-auto h-[130px] md:h-[200px] lg:h-[225px]  object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           src={projects[currentIndex]?.data?.image.src}
           alt={projects[currentIndex]?.data?.thumbnailAlt}
           width={projects[currentIndex]?.data?.image.width}
@@ -49,7 +70,7 @@ export default function ProjectView({ projects }) {
         <video
           class="w-auto h-full max-h-full object-contain relative z-10 mix-blend-screen"
           style={{
-            height: isLargeScreen ? `${h}px` : `${h / 2}px`,
+            height: `${getHeightForScreen()}px`,
             marginTop: `${projects[currentIndex]?.data?.offset?.[1] ?? 0}px`,
             marginLeft: `${projects[currentIndex]?.data?.offset?.[0] ?? 0}px`,
           }}
@@ -70,13 +91,13 @@ export default function ProjectView({ projects }) {
     if (projects[currentIndex].data.videos) {
       return (
         <video
-          class="w-auto h-full max-h-full relative z-10 mix-blend-screen"
+          class="w-auto h-full max-h-full relative z-10 mix-blend-screen pointer-events-none"
           style={{
-            height: isLargeScreen ? `${h}px` : `${h / 2}px`,
+            height: `${getHeightForScreen()}px`,
             marginTop: `${projects[currentIndex]?.data?.offset?.[1] ?? 0}px`,
             marginLeft: `${projects[currentIndex]?.data?.offset?.[0] ?? 0}px`,
-            width: "125%", // Make the video 20% wider
-            scale: "1.8",
+            width: "125%",
+            scale: screenSize === "desktop" ? "1.6" : "1",
             transformOrigin: "center center",
           }}
           autoplay
@@ -107,13 +128,13 @@ export default function ProjectView({ projects }) {
       <ProjectInfo project={projects[currentIndex]} />
       <div
         style={{
-          height: isLargeScreen ? `600px` : `300px`,
+          height: `${getHeightForScreen()}px`,
         }}
-        class={`w-auto flex justify-center items-center self-center relative grid-in-main md:grid-in-main-center`}
+        class={`w-auto flex justify-center items-center self-center relative grid-in-main lg:grid-in-main-center`}
       >
         {renderFeaturedMedia()}
         <img
-          class="w-auto h-[300px] lg:h-[500px] object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="w-auto h-[300px] md:h-[400px] lg:h-[500px] object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           src={bracketImage.src}
           alt="bracket"
         />

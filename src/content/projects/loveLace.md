@@ -4,7 +4,6 @@ order: 2
 thumbnail: ./images/loveLace_v1_thumb.png
 thumbnailAlt: "3D transparent pegasus in a holographic space"
 video: ./videos/lovelace_v1_smooth_pingpong.mp4
-spotlight: 'inverse'
 ---
 
 THE STORY OF ADA LOVELACE AND HER PATH TO UNDERSTANDING THE DEEPER MEANING OF BABBAGE'S THINKING MACHINES

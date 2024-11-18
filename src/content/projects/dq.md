@@ -3,7 +3,6 @@ title: ALT < DQ LACMA AR
 order: 6
 thumbnail: ./images/dq_v2_thumb.png
 thumbnailAlt: DQ game thumbnail
-scale: 1.4
 videos: [
   "./isovist/videos/dq_v1_smooth_pingpong_alpha-hevc-safari.mp4",
   "./isovist/videos/dq_v1_smooth_pingpong_alpha-vp9-chrome.webm",
