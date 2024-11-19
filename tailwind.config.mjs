@@ -23,7 +23,7 @@ export default {
         ],
       },
       gridTemplateColumns: {
-        "mobile-layout": "50% 50%",
+        "mobile-layout": "1fr 1fr",
         "desktop-layout": "30% 40% 30%",
       },
       gridTemplateRows: {

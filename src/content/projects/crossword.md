@@ -3,7 +3,8 @@ title: 3D Crossword
 order: 1
 thumbnail: ./images/3dCW_v1_thumb.png
 thumbnailAlt: "3D Crossword Thumbnail, cube like hologram images with a crossword puzzle"
-scale: 0.8
+scale: 0.475
+offset: [-10, 0]
 video: ./videos/3dcw_v1_smooth_pingpong.mp4
 ---
 

@@ -12,12 +12,13 @@ projects.sort((a, b) => a.data.order - b.data.order);
 
 <Layout title="Isovist">
   <main
-    class="md:p-4 h-screen lg:h-[100vh] w-screen grid
-					gap-4 grid-rows-[25%_40%_25%_5%] md:grid-rows-desktop-layout z-10
-					grid-areas-mobile-layout
-          grid-cols-mobile-layout
-					lg:grid-areas-desktop-layout
-					lg:grid-cols-desktop-layout"
+    class="md:p-4 h-screen lg:h-[100vh] grid
+    gap-4 grid-rows-mobile-layout md:grid-rows-desktop-layout z-10
+    grid-areas-mobile-layout
+    grid-cols-mobile-layout
+    lg:grid-areas-desktop-layout
+    lg:grid-cols-desktop-layout
+    container mx-auto"
   >
     <Logo slot="logo" />
     <ProjectView projects={projects} client:load />

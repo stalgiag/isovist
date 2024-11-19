@@ -42,13 +42,39 @@ export default function ProjectView({ projects }) {
   }
 
   const getHeightForScreen = () => {
+    const baseHeight = 600;
+    console.log(screenSize);
     switch (screenSize) {
       case "mobile":
-        return h / 2;
+        return baseHeight * getScaleForScreen() * 0.65;
       case "tablet":
-        return h * 0.75;
+        return baseHeight * getScaleForScreen() * 0.75;
       case "desktop":
-        return h;
+        return baseHeight * getScaleForScreen() * 1;
+    }
+  };
+
+  const getScaleForScreen = () => {
+    switch (screenSize) {
+      case "mobile":
+        return (
+          projects[currentIndex].data.mobileScale ||
+          projects[currentIndex].data.scale ||
+          1
+        );
+      case "tablet":
+      case "desktop":
+        return projects[currentIndex].data.scale || 1;
+    }
+  };
+
+  const getOffsetForScreen = () => {
+    switch (screenSize) {
+      case "mobile":
+        return projects[currentIndex].data.mobileOffset || [0, 0];
+      case "tablet":
+      case "desktop":
+        return projects[currentIndex].data.offset || [0, 0];
     }
   };
 
@@ -56,7 +82,7 @@ export default function ProjectView({ projects }) {
     if (projects[currentIndex].data.image) {
       return (
         <img
-          class="w-auto h-[130px] md:h-[200px] lg:h-[225px]  object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="w-auto h-[110px] md:h-[150px] -mt-[7px] md:-mt-[10px] lg:-mt-5 lg:h-[180px]  object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           src={projects[currentIndex]?.data?.image.src}
           alt={projects[currentIndex]?.data?.thumbnailAlt}
           width={projects[currentIndex]?.data?.image.width}
@@ -71,8 +97,8 @@ export default function ProjectView({ projects }) {
           class="w-auto h-full max-h-full object-contain relative z-10 mix-blend-screen"
           style={{
             height: `${getHeightForScreen()}px`,
-            marginTop: `${projects[currentIndex]?.data?.offset?.[1] ?? 0}px`,
-            marginLeft: `${projects[currentIndex]?.data?.offset?.[0] ?? 0}px`,
+            marginTop: `${getOffsetForScreen()?.[1] ?? 0}px`,
+            marginLeft: `${getOffsetForScreen()?.[0] ?? 0}px`,
           }}
           src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.video.replace("./", "/")}`}
           ref={(el) => {
@@ -86,17 +112,14 @@ export default function ProjectView({ projects }) {
       );
     }
 
-    // ... existing code ...
-
     if (projects[currentIndex].data.videos) {
       return (
         <video
-          class="w-auto h-full max-h-full relative z-10 mix-blend-screen pointer-events-none"
+          class="w-auto h-full max-h-full relative z-10 pointer-events-none"
           style={{
             height: `${getHeightForScreen()}px`,
-            marginTop: `${projects[currentIndex]?.data?.offset?.[1] ?? 0}px`,
-            marginLeft: `${projects[currentIndex]?.data?.offset?.[0] ?? 0}px`,
-            width: "125%",
+            marginTop: `${getOffsetForScreen()?.[1] ?? 0}px`,
+            marginLeft: `${getOffsetForScreen()?.[0] ?? 0}px`,
             scale: screenSize === "desktop" ? "1.6" : "1",
             transformOrigin: "center center",
           }}
@@ -107,20 +130,17 @@ export default function ProjectView({ projects }) {
           key={currentIndex}
         >
           <source
-            src={projects[currentIndex].data.videos[0]}
+            src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.videos[0].replace("./", "/")}`}
             type="video/webm"
           />
           <source
-            src={projects[currentIndex].data.videos[1]}
+            src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.videos[1].replace("./", "/")}`}
             type="video/quicktime"
           />
         </video>
       );
     }
   };
-
-  const scale = projects[currentIndex].data.scale || 1;
-  const h = 600 * scale;
 
   return (
     <>

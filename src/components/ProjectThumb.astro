@@ -6,11 +6,11 @@ const { title, index, thumbnail } = Astro.props;
 
 <button
   id={`project-${index}`}
-  class="my-2 w-full flex justify-center border-r-[0.5px] border-opacity-50 border-foreground [&:last-child]:border-r-0 [&:nth-child(4)]:lg:border-r-[0.5px] [&:nth-child(4)]:border-r-0"
+  class="my-1 md:my-2 w-full flex justify-center border-r-[0.5px] border-opacity-50 border-foreground [&:last-child]:border-r-0 [&:nth-child(4)]:lg:border-r-[0.5px] [&:nth-child(4)]:border-r-0"
   data-index={index}
 >
   <Image
-    class="w-auto px-3 h-[100px] mix-blend-screen hover:scale-110 transition-all ease-in-out duration-500 object-contain"
+    class="w-auto px-3 h-[60px] md:h-[100px] mix-blend-screen hover:scale-110 transition-all ease-in-out duration-500 object-contain"
     src={thumbnail}
     alt={title}
     width={400}

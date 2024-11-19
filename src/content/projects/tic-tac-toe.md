@@ -1,7 +1,9 @@
 ---
 title: 3D Tic Tac Toe +
 order: 4
-offset: [0, 10]
+scale: 0.75
+offset: [0, 30]
+mobileOffset: [0, 10]
 thumbnail: ./images/3dtt_v2_thumb.png
 thumbnailAlt: Tic Tac Toe game thumbnail
 video: ./videos/3dtt_v2_smooth_pingpong.mp4

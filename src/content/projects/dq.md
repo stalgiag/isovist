@@ -3,9 +3,12 @@ title: ALT < DQ LACMA AR
 order: 6
 thumbnail: ./images/dq_v2_thumb.png
 thumbnailAlt: DQ game thumbnail
+offset: [-40, 0]
+spotlight: normal
+blend: normal
 videos: [
-  "./videos/dq_v1_smooth_pingpong_alpha-hevc-safari.mp4",
-  "./videos/dq_v1_smooth_pingpong_alpha-vp9-chrome.webm",
+  "./videos/dq_v2_smooth_pingpong_alpha-hevc-safari.mp4",
+  "./videos/dq_v2_smooth_pingpong_alpha-vp9-chrome.webm",
 ]
 ---
 
