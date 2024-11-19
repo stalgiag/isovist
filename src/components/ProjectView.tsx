@@ -22,7 +22,7 @@ export default function ProjectView({ projects }) {
     const getScreenSize = () => {
       const width = window.innerWidth;
       if (width <= 768) return "mobile";
-      if (width <= 1024) return "tablet";
+      if (width <= 1280) return "tablet";
       return "desktop";
     };
 
@@ -82,7 +82,7 @@ export default function ProjectView({ projects }) {
     if (projects[currentIndex].data.image) {
       return (
         <img
-          class="w-auto h-[110px] md:h-[150px] -mt-[7px] md:-mt-[10px] lg:-mt-5 lg:h-[180px]  object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="w-auto h-[130px] md:h-[180px] lg:h-[220px]  object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           src={projects[currentIndex]?.data?.image.src}
           alt={projects[currentIndex]?.data?.thumbnailAlt}
           width={projects[currentIndex]?.data?.image.width}

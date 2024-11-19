@@ -6,7 +6,7 @@ const { title, index, thumbnail } = Astro.props;
 
 <button
   id={`project-${index}`}
-  class="my-1 md:my-2 w-full flex justify-center border-r-[0.5px] border-opacity-50 border-foreground [&:last-child]:border-r-0 [&:nth-child(4)]:lg:border-r-[0.5px] [&:nth-child(4)]:border-r-0"
+  class={`my-1 md:my-2 w-full flex justify-center border-x-[0.5px] lg:border-x-[0.75px] border-opacity-50 border-foreground [&:first-child]:border-l-[0.5px] [&:first-child]:lg:border-l-[0.75px] [&:last-child]:border-r-[0.5px] [&:last-child]:lg:border-r-[0.75px] [&:nth-child(4)]:lg:border-r-[0.75px] ${index === 0 ? "selected" : ""}`}
   data-index={index}
 >
   <Image
@@ -23,7 +23,6 @@ const { title, index, thumbnail } = Astro.props;
     const selectedButton = document.querySelector(
       `#project-${window.currentProjectIndex}`
     );
-    console.log(selectedButton);
     selectedButton?.classList.add("selected");
     buttons.forEach((button) => {
       if (button !== selectedButton) {
@@ -34,15 +33,40 @@ const { title, index, thumbnail } = Astro.props;
   window.addEventListener("projectChanged", handleChange);
 </script>
 <style>
-  /* Border after selected item */
   .selected {
-    border-right-width: 2px !important;
-    border-right-color: rgb(249 115 22) !important; /* Tailwind orange-500 */
+    border-left-width: 0.5px !important;
+    border-right-width: 0.5px !important;
+    border-color: #f09938ff !important; /* Tailwind orange-500 */
+  }
+
+  @media (min-width: 1024px) {
+    .selected {
+      border-left-width: 0.75px !important;
+      border-right-width: 0.75px !important;
+    }
   }
 
   /* Border before selected item */
   button:has(+ .selected) {
-    border-right-width: 2px !important;
-    border-right-color: rgb(249 115 22) !important;
+    border-right-width: 0.5px !important;
+    border-right-color: #f09938 !important;
+  }
+
+  @media (min-width: 1024px) {
+    button:has(+ .selected) {
+      border-right-width: 0.75px !important;
+    }
+  }
+
+  /* Border after selected item */
+  .selected + button {
+    border-left-width: 0.5px !important;
+    border-left-color: #f09938 !important;
+  }
+
+  @media (min-width: 1024px) {
+    .selected + button {
+      border-left-width: 0.75px !important;
+    }
   }
 </style>

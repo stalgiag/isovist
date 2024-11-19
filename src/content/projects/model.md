@@ -1,9 +1,9 @@
 ---
 title: Spatial Interaction
 order: 0
-thumbnail: ./images/model_v1.png
+thumbnail: ./images/model_v2.png
 thumbnailAlt: A 3D model sketch in flat blue
-image: ./images/model_v1.png
+image: ./images/model_v2.png
 ---
 ISOVIST IS A SMALL COLLECTIVE OF DESIGNERS AND PROGRAMMERS BUILDING A VARIETY OF APPLICATIONS TO DEVELOP A COMMON, EASY TO USE, INTERACTION MODEL FOR SPATIAL NAVIGATION
 
