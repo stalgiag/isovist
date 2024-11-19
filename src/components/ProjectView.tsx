@@ -160,10 +160,10 @@ export default function ProjectView({ projects }) {
         />
         {projects[currentIndex].data.spotlight === SPOTLIGHTS.INVERSE && (
           <div
-            class="absolute inset-0 bg-black opacity-40 backdrop-blur-md -z-10"
+            class="absolute inset-0 -z-10"
             style={{
               background:
-                "radial-gradient(ellipse 60% 80% at center, black 60%, transparent 100%)",
+                "radial-gradient(ellipse 60% 80% at center, rgba(0, 0, 0, 0.4) 60%, transparent 100%)",
               width: "100%",
               height: "100%",
               left: "0",
@@ -174,10 +174,10 @@ export default function ProjectView({ projects }) {
         )}
         {projects[currentIndex]?.data?.spotlight === SPOTLIGHTS.NORMAL && (
           <div
-            class="absolute inset-0 bg-white opacity-60 backdrop-blur-md -z-10"
+            class="absolute inset-0 -z-10"
             style={{
               background:
-                "radial-gradient(ellipse 48% 30% at center, white 60%, transparent 100%)",
+                "radial-gradient(ellipse 48% 30% at center, rgba(255, 255, 255, 0.6) 60%, transparent 100%)",
               width: "100%",
               height: "100%",
               left: "0",

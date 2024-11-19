@@ -29,7 +29,7 @@ export default {
       gridTemplateRows: {
         "mobile-layout": "25% 40% 25% 5%",
         "desktop-layout":
-          "minmax(150px, 25vh) minmax(400px, 45vh) minmax(200px, 25vh) minmax(25px, 5vh)",
+          "minmax(120px, 16vh) minmax(400px, 45vh) minmax(200px, 25vh) minmax(25px, 5vh)",
       },
       colors: {
         background: "#13151a",
