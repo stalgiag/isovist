@@ -150,7 +150,7 @@ export default function ProjectView({ projects }) {
         style={{
           height: `${getHeightForScreen()}px`,
         }}
-        class={`w-auto flex justify-center items-center self-center relative grid-in-main lg:grid-in-main-center`}
+        class={`w-auto flex justify-center items-center self-center relative grid-in-main lg:grid-in-main-center pointer-events-none`}
       >
         {renderFeaturedMedia()}
         <img

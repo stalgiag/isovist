@@ -18,7 +18,7 @@ projects.sort((a, b) => a.data.order - b.data.order);
     grid-cols-mobile-layout
     lg:grid-areas-desktop-layout
     lg:grid-cols-desktop-layout
-    container mx-auto"
+    px-4 md:px-8 lg:px-16 mx-auto"
   >
     <Logo slot="logo" />
     <ProjectView projects={projects} client:load />
