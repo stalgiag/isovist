@@ -18,6 +18,19 @@ export default function ProjectView({ projects }) {
     null,
   );
 
+  function supportsHEVCAlpha() {
+    const navigator = window.navigator;
+    const ua = navigator.userAgent.toLowerCase();
+    const hasMediaCapabilities = !!(
+      navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo
+    );
+    const isSafari =
+      ua.indexOf("safari") != -1 &&
+      !(ua.indexOf("chrome") != -1) &&
+      ua.indexOf("version/") != -1;
+    return isSafari && hasMediaCapabilities;
+  }
+
   useEffect(() => {
     const getScreenSize = () => {
       const width = window.innerWidth;
@@ -129,14 +142,29 @@ export default function ProjectView({ projects }) {
           playsinline
           key={currentIndex}
         >
-          <source
-            src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.videos[0].replace("./", "/")}`}
-            type="video/webm"
-          />
-          <source
-            src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.videos[1].replace("./", "/")}`}
-            type="video/quicktime"
-          />
+          {supportsHEVCAlpha() ? (
+            <>
+              <source
+                src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.videos[1].replace("./", "/")}`}
+                type="video/quicktime"
+              />
+              <source
+                src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.videos[0].replace("./", "/")}`}
+                type="video/webm"
+              />
+            </>
+          ) : (
+            <>
+              <source
+                src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.videos[0].replace("./", "/")}`}
+                type="video/webm"
+              />
+              <source
+                src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.videos[1].replace("./", "/")}`}
+                type="video/quicktime"
+              />
+            </>
+          )}
         </video>
       );
     }
