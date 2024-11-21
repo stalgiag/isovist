@@ -97,6 +97,7 @@ export default function ProjectView({ projects }) {
     if (projects[currentIndex].data.image) {
       return (
         <img
+          key={currentIndex}
           class="w-auto h-[130px] md:h-[180px] lg:h-[220px]  object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           src={projects[currentIndex]?.data?.image.src}
           alt={projects[currentIndex]?.data?.thumbnailAlt}
@@ -115,7 +116,8 @@ export default function ProjectView({ projects }) {
         projects[currentIndex].data.video;
       return (
         <video
-          class="w-auto h-full max-h-full object-contain relative z-10 mix-blend-screen"
+          key={currentIndex}
+          class="w-auto h-full max-h-full object-contain z-10 mix-blend-screen relative"
           style={{
             height: `${getHeightForScreen()}px`,
             marginTop: `${getOffsetForScreen()?.[1] ?? 0}px`,
@@ -188,7 +190,7 @@ export default function ProjectView({ projects }) {
         }}
         class={`w-auto -mt-[20%] md:-mt-0 flex justify-center items-center self-center relative grid-in-main lg:grid-in-main-center pointer-events-none`}
       >
-        <div key={currentIndex}>{renderFeaturedMedia()}</div>
+        {renderFeaturedMedia()}
         <img
           class="w-auto h-[300px] md:h-[400px] lg:h-[500px] object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           src={bracketImage.src}
@@ -208,20 +210,21 @@ export default function ProjectView({ projects }) {
             }}
           />
         )}
-        {projects[currentIndex]?.data?.spotlight === SPOTLIGHTS.NORMAL && (
-          <div
-            class="absolute inset-0 -z-10"
-            style={{
-              background:
-                "radial-gradient(ellipse 48% 30% at center, rgba(255, 255, 255, 0.6) 60%, transparent 100%)",
-              width: "100%",
-              height: "100%",
-              left: "0",
-              top: "0",
-              filter: "blur(40px)",
-            }}
-          />
-        )}
+        {projects[currentIndex]?.data?.spotlight === SPOTLIGHTS.NORMAL &&
+          !isIOS && (
+            <div
+              class="absolute inset-0 -z-10"
+              style={{
+                background:
+                  "radial-gradient(ellipse 48% 30% at center, rgba(255, 255, 255, 0.6) 60%, transparent 100%)",
+                width: "100%",
+                height: "100%",
+                left: "0",
+                top: "0",
+                filter: "blur(40px)",
+              }}
+            />
+          )}
       </div>
     </>
   );
