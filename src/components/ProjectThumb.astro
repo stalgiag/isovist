@@ -36,7 +36,7 @@ const { title, index, thumbnail } = Astro.props;
   .selected {
     border-left-width: 0.5px !important;
     border-right-width: 0.5px !important;
-    border-color: #f09938ff !important; /* Tailwind orange-500 */
+    border-color: #f09938ff !important;
   }
 
   @media (min-width: 1024px) {
@@ -46,26 +46,30 @@ const { title, index, thumbnail } = Astro.props;
     }
   }
 
-  /* Border before selected item */
-  button:has(+ .selected) {
-    border-right-width: 0.5px !important;
-    border-right-color: #f09938 !important;
+  /* Border before selected item - only within same row */
+  @media (min-width: 768px) {
+    button:has(+ .selected):not(:nth-child(4n)) {
+      border-right-width: 0.5px !important;
+      border-right-color: #f09938 !important;
+    }
   }
 
   @media (min-width: 1024px) {
-    button:has(+ .selected) {
+    button:has(+ .selected):not(:nth-child(8n)) {
       border-right-width: 0.75px !important;
     }
   }
 
-  /* Border after selected item */
-  .selected + button {
-    border-left-width: 0.5px !important;
-    border-left-color: #f09938 !important;
+  /* Border after selected item - only within same row */
+  @media (min-width: 768px) {
+    .selected:not(:nth-child(4n)) + button {
+      border-left-width: 0.5px !important;
+      border-left-color: #f09938 !important;
+    }
   }
 
   @media (min-width: 1024px) {
-    .selected + button {
+    .selected:not(:nth-child(8n)) + button {
       border-left-width: 0.75px !important;
     }
   }

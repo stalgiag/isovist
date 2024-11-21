@@ -3,6 +3,25 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      animation: {
+        "fade-in": "fadeIn 0.3s ease-in",
+        "scale-in": "scaleIn 0.3s ease-out",
+        "clip-in": "clipIn 0.3s ease-out",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        scaleIn: {
+          "0%": { transform: "scale(0.95)" },
+          "100%": { transform: "scale(1)" },
+        },
+        clipIn: {
+          "0%": { clipPath: "circle(0% at center)" },
+          "100%": { clipPath: "circle(100% at center)" },
+        },
+      },
       fontFamily: {
         din: ["Din", "Helvetica Neue", "sans-serif"],
         "din-medium": ["Din Medium", "Helvetica Neue", "sans-serif"],
@@ -27,7 +46,7 @@ export default {
         "desktop-layout": "30% 40% 30%",
       },
       gridTemplateRows: {
-        "mobile-layout": "25% 40% 25% 5%",
+        "mobile-layout": "33% 40% 16% 8%",
         "desktop-layout":
           "minmax(120px, 16vh) minmax(400px, 45vh) minmax(200px, 25vh) minmax(25px, 5vh)",
       },

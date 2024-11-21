@@ -178,9 +178,9 @@ export default function ProjectView({ projects }) {
         style={{
           height: `${getHeightForScreen()}px`,
         }}
-        class={`w-auto flex justify-center items-center self-center relative grid-in-main lg:grid-in-main-center pointer-events-none`}
+        class={`w-auto -mt-[20%] md:-mt-0 flex justify-center items-center self-center relative grid-in-main lg:grid-in-main-center pointer-events-none`}
       >
-        {renderFeaturedMedia()}
+        <div key={currentIndex}>{renderFeaturedMedia()}</div>
         <img
           class="w-auto h-[300px] md:h-[400px] lg:h-[500px] object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           src={bracketImage.src}
