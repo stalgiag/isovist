@@ -12,6 +12,7 @@ const projectCollection = defineCollection({
     title: z.string(),
     video: z.string().optional(),
     videos: z.array(z.string()).optional(),
+    mobileVideo: z.string().optional(),
     blend: z.string().optional(),
     image: image().optional(),
     spotlight: z.enum([SPOTLIGHTS.INVERSE, SPOTLIGHTS.NORMAL]).optional(),

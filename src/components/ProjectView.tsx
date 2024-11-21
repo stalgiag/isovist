@@ -54,6 +54,8 @@ export default function ProjectView({ projects }) {
     return null;
   }
 
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
   const getHeightForScreen = () => {
     const baseHeight = 600;
     console.log(screenSize);
@@ -104,7 +106,13 @@ export default function ProjectView({ projects }) {
       );
     }
 
-    if (projects[currentIndex].data.video) {
+    if (
+      projects[currentIndex].data.video ||
+      (projects[currentIndex].data.mobileVideo && isIOS)
+    ) {
+      const video =
+        projects[currentIndex].data.mobileVideo ||
+        projects[currentIndex].data.video;
       return (
         <video
           class="w-auto h-full max-h-full object-contain relative z-10 mix-blend-screen"
@@ -113,7 +121,7 @@ export default function ProjectView({ projects }) {
             marginTop: `${getOffsetForScreen()?.[1] ?? 0}px`,
             marginLeft: `${getOffsetForScreen()?.[0] ?? 0}px`,
           }}
-          src={`${import.meta.env.BASE_URL}${projects[currentIndex].data.video.replace("./", "/")}`}
+          src={`${import.meta.env.BASE_URL}${video.replace("./", "/")}`}
           ref={(el) => {
             if (el) el.playbackRate = 0.9;
           }}
